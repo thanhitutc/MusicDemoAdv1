@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">musicdemo</string>
+    <string name="tab_Song">All songs</string>
+    <string name="tab_Favorite">Favorite songs</string>
 </resources>
