@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.provider.MediaStore;
 
-import com.thanhclub.musicdemo.App;
 import com.thanhclub.musicdemo.model.Song;
 
 import java.util.ArrayList;
@@ -14,7 +13,7 @@ public class SongManager {
     private Cursor cursor;
     private Context context;
 
-    public SongManager(Context context){
+    public SongManager(Context context) {
         this.context = context;
     }
 
@@ -32,7 +31,7 @@ public class SongManager {
             int duration = cursor.getInt(cursor.getColumnIndex(MediaStore.Audio.Media.DURATION));
             String data = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.DATA));
             String singer = cursor.getString(cursor.getColumnIndex(MediaStore.Audio.Media.ARTIST));
-            songs.add(new Song(id,title,singer,data,duration));
+            songs.add(new Song(id, title, singer, data, duration));
             cursor.moveToNext();
         }
         cursor.close();

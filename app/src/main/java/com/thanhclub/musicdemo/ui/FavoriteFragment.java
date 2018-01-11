@@ -9,21 +9,14 @@ import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import com.thanhclub.musicdemo.R;
 import com.thanhclub.musicdemo.adapter.SongAdpater;
 import com.thanhclub.musicdemo.base.BaseSongFragment;
-import com.thanhclub.musicdemo.manager.SongManager;
-import com.thanhclub.musicdemo.model.Song;
-
-import java.util.List;
 
 public class FavoriteFragment extends BaseSongFragment {
     private BroadcastReceiver broadcastReceiver;
@@ -56,7 +49,6 @@ public class FavoriteFragment extends BaseSongFragment {
         };
     }
 
-
     @Override
     protected void initAdapterSong() {
         songs = databaseManager.getFavoriteSong();
@@ -64,12 +56,12 @@ public class FavoriteFragment extends BaseSongFragment {
         recycler.setAdapter(songAdpater);
         songAdpater.setOnLongItemClickListener(this);
         songAdpater.setOnItemClickListener(this);
-
     }
 
     @Override
     public void onRecyclerItemClick(int posion) {
-
+        service.initSong(songs);
+        service.playSong(posion);
     }
 
     @Override
