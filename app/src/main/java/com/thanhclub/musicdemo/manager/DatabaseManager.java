@@ -24,7 +24,6 @@ public class DatabaseManager {
     private Context context;
     private SQLiteDatabase sqLiteDatabase;
 
-
     public DatabaseManager(Context context) {
         this.context = context;
         createDatabase();

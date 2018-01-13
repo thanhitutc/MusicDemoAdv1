@@ -33,10 +33,6 @@ public class Song implements Comparable<Song> {
         return singer;
     }
 
-    public void setSinger(String singer) {
-        this.singer = singer;
-    }
-
     public String getData() {
         return data;
     }
@@ -47,10 +43,6 @@ public class Song implements Comparable<Song> {
 
     public int getDuration() {
         return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
     }
 
     @Override
